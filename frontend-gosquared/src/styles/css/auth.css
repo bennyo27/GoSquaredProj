@@ -1,0 +1,20 @@
+.auth-wrapper {
+  align-self: center;
+  height: 200px;
+  width: 100%;
+  max-width: 200px;
+  border-radius: 10px;
+  background-color: grey;
+}
+.auth-wrapper .header {
+  display: flex;
+  justify-content: center;
+}
+.auth-wrapper .content {
+  display: flex;
+  justify-content: center;
+}
+.auth-wrapper .switch {
+  display: flex;
+  justify-content: center;
+}
