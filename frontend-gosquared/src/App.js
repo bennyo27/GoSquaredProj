@@ -1,26 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import { Route, withRouter } from "react-router-dom";
+import { connect } from "react-redux";
+import { Switch } from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// --> Components List
+import Auth from "./components/Auth/auth";
+import PrivateRoute from "./components/Private-Route/private-route";
+import Dashboard from "./components/Dashboard/dashboard";
+
+// CSS IMPORT
+import "./styles/css/app.css";
+
+class App extends Component {
+  render() {
+    return (
+      <div className="app">
+        <Switch>
+          <Route exact path="/auth" component={Auth} />
+          <PrivateRoute
+            exact
+            path="/dashboard"
+            component={Dashboard}
+            // props
+            // example={this.state.example}
+          />
+        </Switch>
+      </div>
+    );
+  }
 }
 
-export default App;
+const mapStateToProps = state => {};
+
+export default withRouter(
+  connect(
+    mapStateToProps,
+    null
+  )(App)
+);
