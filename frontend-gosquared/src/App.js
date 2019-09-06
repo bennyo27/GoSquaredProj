@@ -19,7 +19,7 @@ class App extends Component {
           <Route exact path="/auth" component={Auth} />
           <PrivateRoute
             exact
-            path="/dashboard"
+            path="/"
             component={Dashboard}
             // props
             // example={this.state.example}
