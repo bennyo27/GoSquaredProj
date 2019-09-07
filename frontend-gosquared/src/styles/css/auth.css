@@ -30,21 +30,17 @@
 .auth-wrapper .content .form {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   margin-top: 80px;
 }
-.auth-wrapper .content .form form {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-.auth-wrapper .content .form form input {
+.auth-wrapper .content .form input {
   margin: 10px;
 }
-.auth-wrapper .content .form form .text {
+.auth-wrapper .content .form .text {
   width: 200px;
   border-radius: 5px;
 }
-.auth-wrapper .content .form form .button {
+.auth-wrapper .content .form .button {
   margin: 10px auto;
   background-color: white;
   color: black;
