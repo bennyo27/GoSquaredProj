@@ -1,20 +1,71 @@
 .auth-wrapper {
   align-self: center;
-  height: 200px;
+  height: 500px;
   width: 100%;
-  max-width: 200px;
+  max-width: 500px;
   border-radius: 10px;
-  background-color: grey;
+  background-color: #3d4950;
 }
 .auth-wrapper .header {
   display: flex;
   justify-content: center;
+  background-color: white;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  height: 80px;
+}
+.auth-wrapper .header .image {
+  display: flex;
+  justify-content: center;
+}
+.auth-wrapper .header .image .logo {
+  align-self: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 .auth-wrapper .content {
   display: flex;
   justify-content: center;
 }
+.auth-wrapper .content .form {
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+}
+.auth-wrapper .content .form form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.auth-wrapper .content .form form input {
+  margin: 10px;
+}
+.auth-wrapper .content .form form .text {
+  width: 200px;
+  border-radius: 5px;
+}
+.auth-wrapper .content .form form .button {
+  margin: 10px auto;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  font: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+  outline: inherit;
+}
 .auth-wrapper .switch {
   display: flex;
   justify-content: center;
+}
+.auth-wrapper .switch button {
+  background: none;
+  color: white;
+  border: none;
+  padding: 0;
+  font: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+  outline: inherit;
 }
