@@ -28,7 +28,49 @@ class SideDrawer extends Component {
           open={this.state.left}
           onClose={this.toggleDrawer}
         >
-          <div className="widgets">hello</div>
+          <div className="header">
+            <img src="https://static.gosquared.com/images/nav/logo.png" />
+          </div>
+          <div className="widgets">
+            <div className="widget">
+              <div className="icon">
+                <img />
+              </div>
+              <div className="icon">
+                <img />
+              </div>
+              <div className="title">Visitors Online</div>
+              <div className="active"></div>
+            </div>
+            <div className="widget">
+              <div className="icon">
+                <img />
+              </div>
+              <div className="title">Office Temperature</div>
+              <div className="active"></div>
+            </div>
+            <div className="widget">
+              <div className="icon">
+                <img />
+              </div>
+              <div className="title">Plant Schedule</div>
+              <div className="active"></div>
+            </div>
+            <div className="widget">
+              <div className="icon">
+                <img />
+              </div>
+              <div className="title">Weather</div>
+              <div className="active"></div>
+            </div>
+            <div className="widget">
+              <div className="icon">
+                <img />
+              </div>
+              <div className="title">Number of Drinks</div>
+              <div className="active"></div>
+            </div>
+          </div>
         </Drawer>
         <div className="toggle" onClick={this.toggleDrawer}>
           <img src={menuIcon} />
