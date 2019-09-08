@@ -1,0 +1,12 @@
+.drawer-wrapper {
+  width: 50px;
+  display: flex;
+  justify-content: center;
+}
+.drawer-wrapper .drawer {
+  max-width: 100%;
+  width: 300px;
+}
+.drawer-wrapper .drawer .MuiDrawer-paperAnchorLeft .widgets {
+  width: 300px;
+}
