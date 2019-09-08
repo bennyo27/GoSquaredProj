@@ -25,7 +25,7 @@ class Auth extends Component {
 
   register = () => {
     axios
-      .post("http://localhost:3300/users", {
+      .post(`${process.env.REACT_APP_API_URL}/users`, {
         username: this.state.username,
         password: this.state.password
       })
@@ -37,7 +37,31 @@ class Auth extends Component {
       });
   };
 
-  login = () => {};
+  login = () => {
+    axios
+      .post(`${process.env.REACT_APP_API_URL}/login`, {
+        username: this.state.username,
+        password: this.state.password
+      })
+      .then(response => {
+        console.log(response);
+        if (response.data.token) {
+          localStorage.setItem("token", response.data.token);
+        }
+        if (localStorage.getItem("token")) {
+          this.props.history.replace("/");
+        }
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
+
+  componentDidMount() {
+    if (localStorage.getItem("token")) {
+      this.props.history.replace("/");
+    }
+  }
 
   componentDidUpdate() {
     console.log(this.state.registerFlag);
