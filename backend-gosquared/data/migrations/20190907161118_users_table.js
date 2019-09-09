@@ -10,6 +10,11 @@ exports.up = function(knex, Promise) {
       .string("password")
       .notNullable()
       .unique();
+    tbl.boolean("visitors").defaultTo(false);
+    tbl.boolean("office_temp").defaultTo(false);
+    tbl.boolean("plant_sched").defaultTo(false);
+    tbl.boolean("weather").defaultTo(false);
+    tbl.boolean("num_drinks").defaultTo(false);
   });
 };
 

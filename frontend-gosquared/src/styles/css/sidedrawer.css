@@ -15,3 +15,7 @@
   color: #e6eff6;
   height: 100%;
 }
+.widgets .widget {
+  display: flex;
+  justify-content: space-evenly;
+}
