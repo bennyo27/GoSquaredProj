@@ -16,6 +16,9 @@ import plantSchedIcon from "../../images/droplet.svg";
 import weatherIcon from "../../images/weather.svg";
 import numDrinksIcon from "../../images/coffee.svg";
 
+import { connect } from "react-redux";
+import { handleChangeWidget } from "../../store/actions/widgetDataActions";
+
 class SideDrawer extends Component {
   state = {
     left: false
@@ -40,6 +43,7 @@ class SideDrawer extends Component {
             <img src="https://static.gosquared.com/images/nav/logo.png" />
           </div>
           <div className="widgets">
+            {console.log(this.props.userConfig.visitors)}
             <div
               className="widget"
               onClick={() => {
@@ -62,7 +66,16 @@ class SideDrawer extends Component {
                 )}
               </div>
             </div>
-            <div className="widget">
+            <div
+              className="widget"
+              onClick={() => {
+                if (this.props.userConfig.visitors === 0) {
+                  this.props.handleChangeWidget("office_temp", true);
+                } else {
+                  this.props.handleChangeWidget("office_temp", false);
+                }
+              }}
+            >
               <div className="icon">
                 <img src={officeTempIcon} />
               </div>
@@ -75,7 +88,16 @@ class SideDrawer extends Component {
                 )}
               </div>
             </div>
-            <div className="widget">
+            <div
+              className="widget"
+              onClick={() => {
+                if (this.props.userConfig.visitors === 0) {
+                  this.props.handleChangeWidget("plant_sched", true);
+                } else {
+                  this.props.handleChangeWidget("plant_sched", false);
+                }
+              }}
+            >
               <div className="icon">
                 <img src={plantSchedIcon} />
               </div>
@@ -88,7 +110,16 @@ class SideDrawer extends Component {
                 )}
               </div>
             </div>
-            <div className="widget">
+            <div
+              className="widget"
+              onClick={() => {
+                if (this.props.userConfig.visitors === 0) {
+                  this.props.handleChangeWidget("weather", true);
+                } else {
+                  this.props.handleChangeWidget("weather", false);
+                }
+              }}
+            >
               <div className="icon">
                 <img src={weatherIcon} />
               </div>
@@ -101,7 +132,16 @@ class SideDrawer extends Component {
                 )}
               </div>
             </div>
-            <div className="widget">
+            <div
+              className="widget"
+              onClick={() => {
+                if (this.props.userConfig.visitors === 0) {
+                  this.props.handleChangeWidget("num_drinks", true);
+                } else {
+                  this.props.handleChangeWidget("num_drinks", false);
+                }
+              }}
+            >
               <div className="icon">
                 <img src={numDrinksIcon} />
               </div>
@@ -124,4 +164,10 @@ class SideDrawer extends Component {
   }
 }
 
-export default SideDrawer;
+// mapStateToProps
+const mapStateToProps = state => ({});
+
+export default connect(
+  mapStateToProps,
+  { handleChangeWidget }
+)(SideDrawer);

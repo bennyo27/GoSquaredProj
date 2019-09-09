@@ -1,35 +1,94 @@
 import {
-  TEST_START,
-  TEST_COMPLETE,
-  TEST_ERROR
+  GET_DATA_START,
+  GET_DATA_COMPLETE,
+  GET_DATA_ERROR,
+  GET_USER_CONFIG_START,
+  GET_USER_CONFIG_COMPLETE,
+  GET_USER_CONFIG_ERROR,
+  HANDLE_WIDGET_START,
+  HANDLE_WIDGET_COMPLETE,
+  HANDLE_WIDGET_ERROR
 } from "../actions/widgetDataActions";
 
 const initialState = {
-  testing: false,
-  tested: false,
+  data: {
+    num_drinks: "",
+    office_temp: 0,
+    plant_sched: "",
+    visitors: 0,
+    weather: 0
+  },
+  fetchingData: false,
+  fetchedData: false,
+  userConfig: {
+    num_drinks: 0,
+    office_temp: 0,
+    plant_sched: 0,
+    visitors: 0,
+    weather: 0
+  },
+  fetchingUserConfig: false,
+  fetchedUserConfig: false,
   error: ""
 };
 
 const widgetDataReducer = (state = initialState, action) => {
   switch (action.type) {
-    case TEST_START:
+    case GET_DATA_START:
       return {
         ...state,
-        testing: true
+        fetchingData: true
       };
 
-    case TEST_COMPLETE:
+    case GET_DATA_COMPLETE:
       return {
         ...state,
-        movies: action.payload,
-        testing: true,
-        tested: true
+        data: action.payload,
+        fetchingData: true,
+        fetchedData: true
       };
 
-    case TEST_ERROR:
+    case GET_DATA_ERROR:
       return {
         ...state,
-        error: "Error testing"
+        error: "Error getting data."
+      };
+
+    case GET_USER_CONFIG_START:
+      return {
+        ...state,
+        fetchingUserConfig: true
+      };
+
+    case GET_USER_CONFIG_COMPLETE:
+      return {
+        ...state,
+        userConfig: action.payload,
+        fetchingUserConfig: true,
+        fetchedUserConfig: true
+      };
+
+    case GET_USER_CONFIG_ERROR:
+      return {
+        ...state,
+        error: "Error getting data."
+      };
+
+    case HANDLE_WIDGET_START:
+      return {
+        ...state
+      };
+
+    case HANDLE_WIDGET_COMPLETE:
+      return {
+        ...state,
+        userConfig: { ...state.userConfig, [action.widget]: action.value }
+      };
+
+    case HANDLE_WIDGET_ERROR:
+      return {
+        ...state,
+        error: "Error handling data."
       };
 
     default:
