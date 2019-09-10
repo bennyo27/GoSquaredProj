@@ -94,7 +94,7 @@ class Widgets extends Component {
             </div>
           ))}
         {this.props.userConfig.visitors === true ||
-          (this.props.userConfig.visitors === 0 && (
+          (this.props.userConfig.visitors === 1 && (
             <div className="widget visitors">
               <div className="header">
                 <h2>Visitors</h2>
@@ -122,7 +122,7 @@ class Widgets extends Component {
             </div>
           ))}
         {this.props.userConfig.weather === true ||
-          (this.props.userConfig.weather === 0 && (
+          (this.props.userConfig.weather === 1 && (
             <div className="widget weather">
               <div className="header">
                 <h2>Weather</h2>
