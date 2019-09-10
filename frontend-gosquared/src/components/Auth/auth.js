@@ -31,9 +31,15 @@ class Auth extends Component {
       })
       .then(res => {
         console.log(res);
+        this.setState({
+          username: "",
+          password: ""
+        });
+        alert("Successfully Registered");
       })
       .catch(err => {
         console.log(err);
+        alert("Woops! You were not registered");
       });
   };
 
