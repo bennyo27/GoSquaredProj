@@ -81,7 +81,7 @@ class SideDrawer extends Component {
               </div>
               <div className="active">
                 {this.props.userConfig.office_temp === false ||
-                this.props.userConfig.office_temp === false ? (
+                this.props.userConfig.office_temp === 0 ? (
                   <img src={plusIcon} />
                 ) : (
                   <img src={minusIcon} />
