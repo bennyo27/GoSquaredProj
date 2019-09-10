@@ -23,7 +23,10 @@ class Dashboard extends Component {
   render() {
     return (
       <div className="dashboard-wrapper">
-        <SideDrawer userConfig={this.props.userConfig} />
+        <SideDrawer
+          userConfig={this.props.userConfig}
+          redirectToAuth={this.props.redirectToAuth}
+        />
         <div className="dashboard">
           <Widgets userConfig={this.props.userConfig} />
         </div>

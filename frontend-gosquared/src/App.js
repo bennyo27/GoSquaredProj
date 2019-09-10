@@ -12,6 +12,10 @@ import Dashboard from "./components/Dashboard/dashboard";
 import "./styles/css/app.css";
 
 class App extends Component {
+  redirectToAuth = () => {
+    this.props.history.replace("/auth");
+  };
+
   render() {
     return (
       <div className="app">
@@ -22,7 +26,7 @@ class App extends Component {
             path="/"
             component={Dashboard}
             // props
-            // example={this.state.example}
+            redirectToAuth={this.redirectToAuth}
           />
         </Switch>
       </div>

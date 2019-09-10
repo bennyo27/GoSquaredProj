@@ -147,7 +147,7 @@ class SideDrawer extends Component {
               className="logout"
               onClick={() => {
                 localStorage.removeItem("token");
-                this.history.replace("auth");
+                this.props.redirectToAuth();
               }}
             >
               <p>Logout</p>
