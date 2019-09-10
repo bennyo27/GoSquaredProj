@@ -119,9 +119,9 @@ server.get("/data", (req, res) => {
           valuableData: {
             visitors: 1000001,
             office_temp: 75,
-            plant_sched: "13 hours",
+            plant_sched: 13,
             weather: 75,
-            num_drinks: "Too many"
+            num_drinks: "too many"
           }
         });
       }
@@ -179,7 +179,7 @@ server.put("/office_temp", (req, res) => {
     res.status(401).json({ message: "no token provided" });
   }
   db("users")
-    .where("users.id", req.decodedToken.users_id)
+    .where("users.id", req.decodedToken.id)
     .update({ office_temp: value })
     .then(response => {
       res.status(200).json({ message: "Successfully updated" });
@@ -206,7 +206,7 @@ server.put("/plant_sched", (req, res) => {
     res.status(401).json({ message: "no token provided" });
   }
   db("users")
-    .where("users.id", req.decodedToken.users_id)
+    .where("users.id", req.decodedToken.id)
     .update({ plant_sched: value })
     .then(response => {
       res.status(200).json({ message: "Successfully updated" });
@@ -233,7 +233,7 @@ server.put("/weather", (req, res) => {
     res.status(400).json({ message: "no token provided" });
   }
   db("users")
-    .where("users.id", req.decodedToken.users_id)
+    .where("users.id", req.decodedToken.id)
     .update({ weather: value })
     .then(response => {
       res.status(200).json({ message: "Successfully updated" });
@@ -260,7 +260,7 @@ server.put("/num_drinks", (req, res) => {
     res.status(401).json({ message: "no token provided" });
   }
   db("users")
-    .where("users.id", req.decodedToken.users_id)
+    .where("users.id", req.decodedToken.id)
     .update({ num_drinks: value })
     .then(response => {
       res.status(200).json({ message: "Successfully updated" });

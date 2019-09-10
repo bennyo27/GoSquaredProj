@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import SideDrawer from "../SideDrawer/sidedrawer";
+import Widgets from "../Widgets/widgets";
 import axios from "axios";
 import { connect } from "react-redux";
 import {
@@ -12,7 +13,6 @@ import "../../styles/css/dashboard.css";
 
 class Dashboard extends Component {
   componentDidMount() {
-    this.props.getData();
     this.props.getUserConfig();
   }
 
@@ -24,7 +24,9 @@ class Dashboard extends Component {
     return (
       <div className="dashboard-wrapper">
         <SideDrawer userConfig={this.props.userConfig} />
-        <div className="dashboard">k</div>
+        <div className="dashboard">
+          <Widgets userConfig={this.props.userConfig} />
+        </div>
       </div>
     );
   }
@@ -32,7 +34,6 @@ class Dashboard extends Component {
 
 // mapStateToProps
 const mapStateToProps = state => ({
-  data: state.widgetDataReducer.data,
   userConfig: state.widgetDataReducer.userConfig
 });
 

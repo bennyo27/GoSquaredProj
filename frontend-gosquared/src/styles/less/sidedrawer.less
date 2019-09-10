@@ -7,6 +7,10 @@
     max-width: 100%;
     width: 300px;
   }
+
+  .toggle {
+    cursor: pointer;
+  }
 }
 
 .header {
@@ -20,6 +24,20 @@
 
   .widget {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    width: 180px;
+    margin: 0 15px 0 15px;
+    cursor: pointer;
+
+    .active {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  .logout {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
   }
 }

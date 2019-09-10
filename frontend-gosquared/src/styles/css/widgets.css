@@ -1,0 +1,59 @@
+.widgets-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+  width: 50%;
+  margin: 0 auto;
+}
+.widgets-container .widget {
+  display: flex;
+  flex-direction: column;
+  margin: 30px;
+}
+.widgets-container .widget .header {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  color: white;
+  display: flex;
+  justify-content: left;
+  max-width: 100%;
+  background-color: #35424a;
+  margin-bottom: 0;
+}
+.widgets-container .widget .header h2 {
+  margin: 2px 30px 0px 5px;
+}
+.widgets-container .widget .content {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #ffffff;
+  margin-left: 20px;
+  margin-right: 20px;
+  max-width: 100%;
+  padding: 20px;
+}
+.widgets-container .widget .content .thermometer {
+  margin: 0 auto;
+}
+.widgets-container .weather {
+  display: flex;
+  width: 250px;
+  max-width: 100%;
+}
+.widgets-container .weather .content {
+  flex-direction: row;
+  padding: 40px;
+}
+.widgets-container .weather .content p {
+  font-size: 2rem;
+  margin-left: 20px;
+  font-family: "Roboto Mono", monospace;
+}
+.widgets-container .plant_sched .content span {
+  display: flex;
+  justify-content: center;
+  font-size: 1.6rem;
+}

@@ -75,7 +75,7 @@ export const handleChangeWidget = (widget, value) => {
         }
       )
       .then(response => {
-        console.log(value, widget);
+        console.log(value, widget, response);
         dispatch({
           type: HANDLE_WIDGET_COMPLETE,
           value: value === true ? 1 : 0,

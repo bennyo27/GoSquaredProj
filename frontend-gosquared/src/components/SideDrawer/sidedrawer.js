@@ -10,12 +10,6 @@ import menuIcon from "../../images/menu.svg";
 import plusIcon from "../../images/plus.svg";
 import minusIcon from "../../images/minus.svg";
 
-import visitorsIcon from "../../images/visitors.svg";
-import officeTempIcon from "../../images/thermometer.svg";
-import plantSchedIcon from "../../images/droplet.svg";
-import weatherIcon from "../../images/weather.svg";
-import numDrinksIcon from "../../images/coffee.svg";
-
 import { connect } from "react-redux";
 import { handleChangeWidget } from "../../store/actions/widgetDataActions";
 
@@ -54,10 +48,9 @@ class SideDrawer extends Component {
                 }
               }}
             >
-              <div className="icon">
-                <img src={visitorsIcon} />
+              <div className="title">
+                <p>Visitors</p>
               </div>
-              <div className="title">Visitors Online</div>
               <div className="active">
                 {this.props.userConfig.visitors === 0 ? (
                   <img src={plusIcon} />
@@ -69,17 +62,16 @@ class SideDrawer extends Component {
             <div
               className="widget"
               onClick={() => {
-                if (this.props.userConfig.visitors === 0) {
+                if (this.props.userConfig.office_temp === 0) {
                   this.props.handleChangeWidget("office_temp", true);
                 } else {
                   this.props.handleChangeWidget("office_temp", false);
                 }
               }}
             >
-              <div className="icon">
-                <img src={officeTempIcon} />
+              <div className="title">
+                <p>Office Temperature</p>
               </div>
-              <div className="title">Office Temperature</div>
               <div className="active">
                 {this.props.userConfig.office_temp === 0 ? (
                   <img src={plusIcon} />
@@ -91,17 +83,16 @@ class SideDrawer extends Component {
             <div
               className="widget"
               onClick={() => {
-                if (this.props.userConfig.visitors === 0) {
+                if (this.props.userConfig.plant_sched === 0) {
                   this.props.handleChangeWidget("plant_sched", true);
                 } else {
                   this.props.handleChangeWidget("plant_sched", false);
                 }
               }}
             >
-              <div className="icon">
-                <img src={plantSchedIcon} />
+              <div className="title">
+                <p>Plant Schedule</p>
               </div>
-              <div className="title">Plant Schedule</div>
               <div className="active">
                 {this.props.userConfig.plant_sched === 0 ? (
                   <img src={plusIcon} />
@@ -113,17 +104,16 @@ class SideDrawer extends Component {
             <div
               className="widget"
               onClick={() => {
-                if (this.props.userConfig.visitors === 0) {
+                if (this.props.userConfig.weather === 0) {
                   this.props.handleChangeWidget("weather", true);
                 } else {
                   this.props.handleChangeWidget("weather", false);
                 }
               }}
             >
-              <div className="icon">
-                <img src={weatherIcon} />
+              <div className="title">
+                <p>Weather</p>
               </div>
-              <div className="title">Weather</div>
               <div className="active">
                 {this.props.userConfig.weather === 0 ? (
                   <img src={plusIcon} />
@@ -135,17 +125,16 @@ class SideDrawer extends Component {
             <div
               className="widget"
               onClick={() => {
-                if (this.props.userConfig.visitors === 0) {
+                if (this.props.userConfig.num_drinks === 0) {
                   this.props.handleChangeWidget("num_drinks", true);
                 } else {
                   this.props.handleChangeWidget("num_drinks", false);
                 }
               }}
             >
-              <div className="icon">
-                <img src={numDrinksIcon} />
+              <div className="title">
+                <p>Number of Drinks</p>
               </div>
-              <div className="title">Number of Drinks</div>
               <div className="active">
                 {this.props.userConfig.num_drinks === 0 ? (
                   <img src={plusIcon} />
@@ -153,6 +142,15 @@ class SideDrawer extends Component {
                   <img src={minusIcon} />
                 )}
               </div>
+            </div>
+            <div
+              className="logout"
+              onClick={() => {
+                localStorage.removeItem("token");
+                this.history.replace("auth");
+              }}
+            >
+              <p>Logout</p>
             </div>
           </div>
         </Drawer>
