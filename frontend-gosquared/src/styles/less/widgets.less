@@ -40,6 +40,11 @@
         margin: 0 auto;
       }
     }
+
+    @media (max-width: 500px) {
+      margin: 0;
+      width: 200px;
+    }
   }
 
   .weather {
@@ -66,5 +71,28 @@
         font-size: 1.6rem;
       }
     }
+  }
+
+  .visitors {
+    .content {
+      @media (max-width: 500px) {
+        text {
+          display: flex;
+          justify-content: center;
+          font-size: 1.3rem !important;
+        }
+        p {
+          display: flex;
+          justify-content: center;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 500px) {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    width: 100%;
   }
 }

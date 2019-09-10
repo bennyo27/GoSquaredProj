@@ -38,6 +38,12 @@
 .widgets-container .widget .content .thermometer {
   margin: 0 auto;
 }
+@media (max-width: 500px) {
+  .widgets-container .widget {
+    margin: 0;
+    width: 200px;
+  }
+}
 .widgets-container .weather {
   display: flex;
   width: 250px;
@@ -56,4 +62,23 @@
   display: flex;
   justify-content: center;
   font-size: 1.6rem;
+}
+@media (max-width: 500px) {
+  .widgets-container .visitors .content text {
+    display: flex;
+    justify-content: center;
+    font-size: 1.3rem !important;
+  }
+  .widgets-container .visitors .content p {
+    display: flex;
+    justify-content: center;
+  }
+}
+@media (max-width: 500px) {
+  .widgets-container {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    width: 100%;
+  }
 }
