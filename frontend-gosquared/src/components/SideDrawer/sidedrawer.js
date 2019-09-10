@@ -41,7 +41,7 @@ class SideDrawer extends Component {
             <div
               className="widget"
               onClick={() => {
-                if (this.props.userConfig.visitors === 0) {
+                if (this.props.userConfig.visitors === false) {
                   this.props.handleChangeWidget("visitors", true);
                 } else {
                   this.props.handleChangeWidget("visitors", false);
@@ -52,7 +52,7 @@ class SideDrawer extends Component {
                 <p>Visitors</p>
               </div>
               <div className="active">
-                {this.props.userConfig.visitors === 0 ? (
+                {this.props.userConfig.visitors === false ? (
                   <img src={plusIcon} />
                 ) : (
                   <img src={minusIcon} />
@@ -62,7 +62,7 @@ class SideDrawer extends Component {
             <div
               className="widget"
               onClick={() => {
-                if (this.props.userConfig.office_temp === 0) {
+                if (this.props.userConfig.office_temp === false) {
                   this.props.handleChangeWidget("office_temp", true);
                 } else {
                   this.props.handleChangeWidget("office_temp", false);
@@ -73,7 +73,7 @@ class SideDrawer extends Component {
                 <p>Office Temperature</p>
               </div>
               <div className="active">
-                {this.props.userConfig.office_temp === 0 ? (
+                {this.props.userConfig.office_temp === false ? (
                   <img src={plusIcon} />
                 ) : (
                   <img src={minusIcon} />
@@ -83,7 +83,7 @@ class SideDrawer extends Component {
             <div
               className="widget"
               onClick={() => {
-                if (this.props.userConfig.plant_sched === 0) {
+                if (this.props.userConfig.plant_sched === false) {
                   this.props.handleChangeWidget("plant_sched", true);
                 } else {
                   this.props.handleChangeWidget("plant_sched", false);
@@ -94,7 +94,7 @@ class SideDrawer extends Component {
                 <p>Plant Schedule</p>
               </div>
               <div className="active">
-                {this.props.userConfig.plant_sched === 0 ? (
+                {this.props.userConfig.plant_sched === false ? (
                   <img src={plusIcon} />
                 ) : (
                   <img src={minusIcon} />
@@ -104,7 +104,7 @@ class SideDrawer extends Component {
             <div
               className="widget"
               onClick={() => {
-                if (this.props.userConfig.weather === 0) {
+                if (this.props.userConfig.weather === false) {
                   this.props.handleChangeWidget("weather", true);
                 } else {
                   this.props.handleChangeWidget("weather", false);
@@ -115,7 +115,7 @@ class SideDrawer extends Component {
                 <p>Weather</p>
               </div>
               <div className="active">
-                {this.props.userConfig.weather === 0 ? (
+                {this.props.userConfig.weather === false ? (
                   <img src={plusIcon} />
                 ) : (
                   <img src={minusIcon} />
@@ -125,7 +125,7 @@ class SideDrawer extends Component {
             <div
               className="widget"
               onClick={() => {
-                if (this.props.userConfig.num_drinks === 0) {
+                if (this.props.userConfig.num_drinks === false) {
                   this.props.handleChangeWidget("num_drinks", true);
                 } else {
                   this.props.handleChangeWidget("num_drinks", false);
@@ -136,7 +136,7 @@ class SideDrawer extends Component {
                 <p>Number of Drinks</p>
               </div>
               <div className="active">
-                {this.props.userConfig.num_drinks === 0 ? (
+                {this.props.userConfig.num_drinks === false ? (
                   <img src={plusIcon} />
                 ) : (
                   <img src={minusIcon} />

@@ -21,11 +21,11 @@ const initialState = {
   fetchingData: false,
   fetchedData: false,
   userConfig: {
-    num_drinks: 0,
-    office_temp: 0,
-    plant_sched: 0,
-    visitors: 0,
-    weather: 0
+    num_drinks: false,
+    office_temp: false,
+    plant_sched: false,
+    visitors: false,
+    weather: false
   },
   fetchingUserConfig: false,
   fetchedUserConfig: false,

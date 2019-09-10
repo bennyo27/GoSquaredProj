@@ -35,7 +35,7 @@ class Widgets extends Component {
   render() {
     return (
       <div className="widgets-container">
-        {this.props.userConfig.num_drinks === 1 && (
+        {this.props.userConfig.num_drinks === true && (
           <div className="widget num_drinks">
             <div className="header">
               <h2>Number of Drinks</h2>
@@ -46,7 +46,7 @@ class Widgets extends Component {
             </div>
           </div>
         )}
-        {this.props.userConfig.office_temp === 1 && (
+        {this.props.userConfig.office_temp === true && (
           <div className="widget office_temp">
             <div className="header">
               <h2>Office Temperature</h2>
@@ -69,7 +69,7 @@ class Widgets extends Component {
             </div>
           </div>
         )}
-        {this.props.userConfig.plant_sched === 1 && (
+        {this.props.userConfig.plant_sched === true && (
           <div className="widget plant_sched">
             <div className="header">
               <h2>Plant Watering Schedule</h2>
@@ -90,7 +90,7 @@ class Widgets extends Component {
             </div>
           </div>
         )}
-        {this.props.userConfig.visitors === 1 && (
+        {this.props.userConfig.visitors === true && (
           <div className="widget visitors">
             <div className="header">
               <h2>Visitors</h2>
@@ -117,7 +117,7 @@ class Widgets extends Component {
             </div>
           </div>
         )}
-        {this.props.userConfig.weather === 1 && (
+        {this.props.userConfig.weather === true && (
           <div className="widget weather">
             <div className="header">
               <h2>Weather</h2>
